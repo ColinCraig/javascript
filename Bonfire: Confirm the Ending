@@ -1,0 +1,15 @@
+function end(str, target) {
+  
+  var myTargetLength = target.length;
+  var myNewStr = str.substr(str.length - target.length, target.length);
+  if (myNewStr === target)
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }  
+ }
+
+end("Bastian", "n");
