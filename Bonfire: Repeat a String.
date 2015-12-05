@@ -1,0 +1,24 @@
+/*
+Question ambiguous about what to return if
+argument num = 0. This function was considered correct
+but will return an empty string for any supplied num <= 0.
+Also \ character needs to be escaped if included in supplied string.
+*/
+function repeat(str, num) {
+	myReturnedString = "";
+  	if (num >= 0)
+    {
+      for (var i = 0; i < num; i++)
+        {
+          myReturnedString += str;
+        }
+      
+        }
+        else
+        {
+          var myEmptyString = "";
+          return myEmptyString;
+        }
+      return myReturnedString;
+    }
+repeat("abc", 3); // returns abdabcabc
