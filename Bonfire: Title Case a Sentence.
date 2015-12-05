@@ -1,0 +1,24 @@
+function titleCase(str) {
+  var myArray = str.split(" ");
+  for (var i = 0; i < myArray.length; i++)
+    {
+      for (var j = 0; j < myArray[i].length; j++)
+        {
+            if (j === 0)
+            {
+              newStr = myArray[i].charAt(j); // global variable, because not declared with var
+              newStr = newStr.replace(newStr, newStr.toUpperCase());
+            }
+          else
+            {
+            	var newStr2 = myArray[i].charAt(j); // local variable
+                newStr2 = newStr2.replace(newStr2, newStr2.toLowerCase());
+                newStr = newStr.concat(newStr2);
+            }
+         }
+      myArray.splice(i, 1, newStr);
+    }
+  str = myArray.join(" ");
+  return str;
+}
+titleCase("I'm a little tea pot");
