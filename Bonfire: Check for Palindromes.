@@ -1,0 +1,28 @@
+function palindrome(str) {
+  
+  if (typeof str === "string")
+  {
+    var myString = (str.replace(/[^a-zA-Z0-9]/g, "")).toLowerCase();
+    var myStringArray = myString.split(""); 
+        myString = myStringArray.join("");
+    console.log(myString);
+    var myReplacementString = (str.replace(/[^a-zA-Z0-9]/g, "")).toLowerCase();
+    var myArray = myReplacementString.split(""); 
+    var myReversedString = myArray.reverse();
+        myReversedString = myArray.join("");
+    console.log(myReversedString);
+      if (myString === myReversedString)
+      {
+        return true;
+      }
+      else
+      {
+        return false;
+      }
+  }
+  else
+  {
+    console.log("argument supplied is not a string!");
+  }
+ }
+palindrome("never odd or even");
