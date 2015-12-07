@@ -1,0 +1,23 @@
+function truncate(str, num) {
+  
+  var concatStr = "...";
+  if (str.length > num)
+  {
+      var caseSwitch = (num > 3);
+      switch(caseSwitch)
+        {
+          case true:
+           returnStr = str.slice(0, num - 3) + concatStr;
+           break;
+          case false:
+           returnStr = str.slice(0, num) + concatStr;
+           break; 
+        }
+    }
+    else 
+    {
+         returnStr = str;
+    }
+  return returnStr;
+  }   
+  truncate("A-tisket a-tasket A green and yellow basket", 11);
