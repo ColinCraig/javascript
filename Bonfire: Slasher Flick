@@ -1,0 +1,7 @@
+function slasher(arr, howMany) {
+  // it doesn't always pay to be first
+  arr.splice(0, howMany); // remove howMany elements, start at arr[0] and end at arr[howMany - 1] inc.
+  return arr;
+}
+
+slasher([1, 2, 3], 2);
