@@ -1,0 +1,27 @@
+function chunk(arr, size) {
+	
+	var myReturnArray = [];
+	
+	while (arr.length > 0)
+      {
+        var myTempArray = [];
+        myTempArray = arr.slice(0, size);
+          if (typeof myTempArray === (/a-zA-Z/))
+          {
+             myTempArrayFormatted = myTempArray.map(function(element)
+              {
+                return  '"' + element + '"';
+              });
+          }
+          else
+          {
+              myTempArrayFormatted = myTempArray;
+          }
+        myReturnArray.push(myTempArrayFormatted);
+		    arr.splice(0, size);
+      }
+  return myReturnArray;
+}
+//chunk(["a", "b", "c", "d"], 2);
+//chunk(["a", "b", "c", "d", "e"], 2);
+chunk([1, 2, 3, 4], 2);
