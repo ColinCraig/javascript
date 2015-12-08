@@ -1,8 +1,8 @@
 function chunk(arr, size) {
 	
-	var myReturnArray = [];
+      var myReturnArray = [];
 	
-	while (arr.length > 0)
+      while (arr.length > 0)
       {
         var myTempArray = [];
         myTempArray = arr.slice(0, size);
