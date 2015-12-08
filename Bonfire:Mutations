@@ -1,0 +1,81 @@
+/*
+First version, uses string.indexOf().
+Function mutation returns true if and only if all characters in searchStr string appear
+at least once in strToSearch. Differentiates between upper and lower case unless both
+strings are converted to upper or lower case as str.indexOf() is case sensitive. */
+
+function mutation(arr) {
+  
+  var strToSearch = arr[0].toLowerCase();
+  var searchStr = arr[1].toLowerCase();
+  /* replace above two lines with next two if for example A and a are to be considered different characters.
+  var strToSearch = arr[0]; 
+  var searchStr = arr[1];
+  */
+  var allThere = false;
+  
+  for (var i = 0; i < searchStr.length; i++)
+    {
+		  for (var j = 0; j < strToSearch.length; j++)
+        {
+          if(strToSearch.indexOf(searchStr[i], -1) >= 0) // finds index of 1st instance of searchStr[i], searches whole string
+            {
+              allThere = true; // break when 1st instance of searchStr[i] is found
+              break;
+            }
+            else
+            {
+              allThere = false; // continue as searchStr[i] not found i.e. strToSearch.indexOf(searchStr[i], -1) returned -1
+              continue;
+            }
+        }
+      if (allThere === false) // no instances of searchStr[i] found in strToSearch
+        {
+          break;
+        }
+    }
+  return allThere;
+}
+
+mutation(["Alien", "alien"]); // returns true
+
+
+/*
+Second version, uses string.charAt().
+Function mutation returns true if and only if all characters in searchStr string appear
+at least once in strToSearch. Differentiates between upper and lower case unless both
+strings are converted to upper or lower case as str.charAt() is case sensitive. 
+*/
+function mutation(arr) {
+  
+  var strToSearch = arr[0].toLowerCase();
+  var searchStr = arr[1].toLowerCase();
+  /* replace above two lines with next two if for example A and a are to be considered different characters.
+  var strToSearch = arr[0]; 
+  var searchStr = arr[1];
+  */
+  var allThere = false;
+  
+  for (var i = 0; i < searchStr.length; i++)
+    {
+      for (var j = 0; j < strToSearch.length; j++)
+        {
+          if(searchStr.charAt(i) === strToSearch.charAt(j))
+            {
+              allThere = true; // break when 1st instance of current searchStr char is found.
+              break;
+            }
+            else
+            {
+              allThere = false; // continue if 1st instance not found yet.
+              continue;
+            }
+        }
+      if (allThere === false) // no instances of current searchStr character found in strToSearch
+        {
+          break;
+        }
+    }
+  return allThere;
+}
+mutation(["Alien", "alien"]); // returns true
