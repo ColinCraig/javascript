@@ -1,0 +1,19 @@
+function bouncer(arr) {
+  return arr.filter(removeFalsy);
+}
+function removeFalsy(value)
+  {
+    // Falsy values in javascript are: false, 0, -0, "", '', null, undefined and NaN 
+    // everything else is Truthy, e.g. "false" and "0" are Truthy
+    
+        if(!value) // if  block will only be executed if !value translates to true
+          {
+            return false;
+          }
+         else
+          {
+            return true; // values for which !value returns false will be kept in arr
+          } 
+  }
+
+bouncer([7, "ate", "", false, 9, -0, 0, '', null, undefined, NaN]); // returns [7, "ate", 9] 
