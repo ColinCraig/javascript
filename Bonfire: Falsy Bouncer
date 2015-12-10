@@ -6,14 +6,16 @@ function removeFalsy(value)
     // Falsy values in javascript are: false, 0, -0, "", '', null, undefined and NaN 
     // everything else is Truthy, e.g. "false" and "0" are Truthy
     
-        if(!value) // if  block will only be executed if !value translates to true
+        if(value) // if  block will only be executed for truthy values
           {
-            return false;
+            return true;
           }
          else
           {
-            return true; // values for which !value returns false will be kept in arr
+            return false; // falsy values will drop through if statement and come here instead
           } 
   }
 
 bouncer([7, "ate", "", false, 9, -0, 0, '', null, undefined, NaN]); // returns [7, "ate", 9] 
+Status API Training Shop Blog About Pricing
+© 2015 GitHub, Inc. Terms Privacy Security Contact Help
