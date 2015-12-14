@@ -1,0 +1,42 @@
+function destroyer(arr) {
+	
+	arr = arr.filter(filterByValue, arguments);
+	return arr;
+}
+
+function filterByValue(element){
+	
+	var myExpr = "";
+	
+	element  = "'" + element + "'"; // avoid tree is not defined error etc.
+	
+	for (var i = 1; i < this.length; i++)
+	{
+	
+		if (i < this.length - 1)
+		{
+			myExpr += element + " !== " + "'" + this[i] + "'"  + " && ";
+		}	
+		else
+		{
+			myExpr += element + " !== " + "'" + this[i] + "'";
+		}
+	}
+
+var myVar;
+
+function myFunction() {
+    myVar = window.setTimeout(evalFunc, 10);
+}
+
+function evalFunc() {
+return eval(myExpr);
+}
+
+return (evalFunc());
+
+}
+
+destroyer(["tree", "hamburger", 53], "tree", 53);
+//destroyer([3, 5, 1, 2, 2], 2, 3, 5);
+
