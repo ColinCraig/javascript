@@ -1,0 +1,61 @@
+function where(arr, num) {
+  return FindIndexOfNum(arr, num);
+}
+  
+	function FindIndexOfNum(arr, num) {
+		
+		arr.sort(function(a, b) {
+			return a - b;
+		});
+		
+		var caseSwitch = arr.length;
+		var requiredIndex = 0;
+		
+		switch(caseSwitch) {
+			
+			case 0:
+				requiredIndex = 0;
+				break;
+			case 1:
+				if (num > arr[0])
+				{
+					requiredIndex = 1;
+				}	 
+				else
+				{
+					requiredIndex = 0;
+				}
+				break;
+				
+			default:
+				if (num <= arr[0]) 
+				{
+					requiredIndex = 0;
+					break;
+				}
+  
+				if(num >= arr[arr.length - 1])
+				{
+					requiredIndex = arr.length;
+					break;
+				}
+  
+				for (var i = 0; i < arr.length - 1; i++)
+				{
+					if (num > arr[i] && num <= arr[i + 1])
+					{
+						requiredIndex = i + 1;
+						break;
+					}
+					if (num === arr[i] && num <= arr[i + 1])
+					{
+						requiredIndex = i;
+						break;
+					}
+				}
+				break;
+		}
+		return requiredIndex;
+	}  
+	
+where([5, 3, 20, 20, 25], 25);
